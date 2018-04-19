@@ -12,4 +12,5 @@ else
 fi
 
 # Start Supervisor, with Nginx and uWSGI
-/usr/bin/supervisord
+#/usr/bin/supervisord
+/bin/sh
