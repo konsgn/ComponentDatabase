@@ -13,4 +13,7 @@ fi
 
 # Start Supervisor, with Nginx and uWSGI
 #/usr/bin/supervisord
+nginx;
+uwsgi --ini ../uwsgi.ini;
+
 /bin/sh

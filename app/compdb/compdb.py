@@ -7,9 +7,9 @@ from contextlib import closing
 
 
 # configuration
-DATABASE = '/tmp/flaskr.db'
-DEBUG = True
-SECRET_KEY = 'development key' #TODO change this!!!!
+DATABASE = '/tmp/components.db'
+DEBUG = 0
+SECRET_KEY = 'rcoageusnbintdoelntkhbaos' #TODO change this!!!!
 CURRENT_USER = None
 # create our little application :)
 app = Flask(__name__)
@@ -26,6 +26,12 @@ def init_db():
         with app.open_resource('schema.sql') as f:
             db.cursor().executescript(f.read())
         db.commit()
+
+@app.cli.command('initdb')
+def initdb_command():
+    """Initializes the database."""
+    init_db()
+    print 'Initialized the database.'
 
 @app.before_request
 def before_request():

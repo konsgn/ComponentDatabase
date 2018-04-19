@@ -4,6 +4,8 @@ RUN apk add --no-cache  --update\
 	&& pip2 install --upgrade pip \
 	&& pip2 install flask
 
+ENV FLASK_APP /app/compdb/compdb.py
+
 # By default, allow unlimited file sizes, modify it to limit the file sizes
 # To have a maximum of 1 MB (Nginx's default) change the line to:
 # ENV NGINX_MAX_UPLOAD 1m
