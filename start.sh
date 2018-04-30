@@ -16,4 +16,5 @@ fi
 nginx;
 uwsgi --ini ../uwsgi.ini;
 
+##TODO Get rid of this and re-introduce supervisord
 /bin/sh
